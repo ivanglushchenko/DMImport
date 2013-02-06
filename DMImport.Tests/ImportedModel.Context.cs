@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DMImport.Tests
+namespace DMImportTests
 {
     using System;
     using System.Data.Entity;
@@ -25,5 +25,11 @@ namespace DMImport.Tests
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<ObjectState> ObjectState { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<ProductGroup> ProductGroup { get; set; }
+        public DbSet<ProductType> ProductType { get; set; }
     }
 }

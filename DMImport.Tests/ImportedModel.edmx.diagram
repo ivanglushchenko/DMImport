@@ -1,10 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
- <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
-    <edmx:Diagrams>
-      <Diagram DiagramId="2f1decf31ee44dd7906f1be3a2574dfe" Name="Diagram1" />
-    </edmx:Diagrams>
-  </edmx:Designer>
+    <Diagrams>
+      <Diagram DiagramId="2f1decf31ee44dd7906f1be3a2574dfe" Name="Diagram1">
+        <EntityTypeShape EntityType="DomainModel.Customer" Width="2" PointX="0" PointY="0" IsExpanded="false" />
+        <EntityTypeShape EntityType="DomainModel.ObjectState" Width="2" PointX="3.2" PointY="0" IsExpanded="false" />
+        <EntityTypeShape EntityType="DomainModel.Order" Width="2" PointX="3.2" PointY="2" IsExpanded="false" />
+        <EntityTypeShape EntityType="DomainModel.Product" Width="2" PointX="0" PointY="2" IsExpanded="false" />
+        <EntityTypeShape EntityType="DomainModel.ProductGroup" Width="2" PointX="6.4" PointY="0" IsExpanded="false" />
+        <EntityTypeShape EntityType="DomainModel.ProductType" Width="2" PointX="6.4" PointY="2" IsExpanded="false" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
 </edmx:Edmx>
