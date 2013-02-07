@@ -31,15 +31,7 @@ let getAttr name (element: XElement) = element.Attribute(xname (":" + name)).Val
 let newElem name (content: Object seq) = new XElement(XName.Get(name, "http://schemas.microsoft.com/ado/2009/11/edm"), content) :> Object
 let newAttr name value = new XAttribute(XName.op_Implicit name, value)   :> Object
 
-let getTypeStr (t: Type) = 
-    if t.IsGenericType then 
-        let index = t.Name.IndexOf '`'
-        let name = t.Name.Substring(0, index)
-        let args = System.String.Join(", ", t.GetGenericArguments())
-        name + "<" + args + ">"
-    else t.Name
-
-let newEntSet name entityType = newElem "EntitySet" [ newAttr "Name" name; newAttr "EntityType" entityType ]
+let newEntSet name entityType = newElem "EntitySet" [ newAttr "Name" (name + "s"); newAttr "EntityType" entityType ]
 
 let newEntShape name ns (x, y) =
     let content = [ newAttr "EntityType" (ns + "." + name)
@@ -53,6 +45,10 @@ let importDomainModel (sourceAssemblyPath: string) (targetModelPath: string) sta
     inspectTypes sourceAssemblyPath startingNamespace
 
     let types = typesMap.Value
+    let docModel = targetModelPath |> XDocument.Load
+    let schema = docModel.Root |> getDescendant "ConceptualModels" |> getDescendant "http://schemas.microsoft.com/ado/2009/11/edm:Schema"
+    let ns = schema |> getAttr "Namespace"
+    let container =  schema |> getDescendant "http://schemas.microsoft.com/ado/2009/11/edm:EntityContainer"
 
     let newEntType (entityType: Type) =
         let newProp n typeName isNullable = 
@@ -60,39 +56,62 @@ let importDomainModel (sourceAssemblyPath: string) (targetModelPath: string) sta
                 [ newAttr "Type" typeName
                   newAttr "Name" n
                   newAttr "Nullable" isNullable ]
-        let newNavProp (pi: PropertyInfo) = 
+        let newNavProp (n, rel) = 
             newElem "NavigationProperty" 
-                [ newAttr "Name" pi.Name
-                  newAttr "FromRole" entityType.Name
-                  newAttr "ToRole" (pi.PropertyType.GetGenericArguments().[0].Name) ]
-        let content = [ newAttr "Name" (entityType.Name);
+                [ newAttr "Name" rel.name
+                  newAttr "Relationship" (ns + "." + n)
+                  newAttr "FromRole" rel.roleFrom
+                  newAttr "ToRole" rel.roleTo ]
+        let content = [ newAttr "Name" (entityType.Name)
                         newElem "Key" 
                             [ newElem "PropertyRef" 
-                                [ newAttr "Name" "Id" ] ];
-                            newProp "Id" "Int32" "false" ]
+                                [ newAttr "Name" "Id" ] ] ]
         let simpleProps = 
-            entityType.GetProperties() 
-            |> List.ofArray 
-            |> List.filter (fun p -> p.CanRead && p.CanWrite && p.Name <> "Id" && p.PropertyType.IsGenericType = false && p.PropertyType.Namespace.StartsWith("System"))
-            |> List.map (fun p -> newProp (p.Name) (getTypeStr p.PropertyType) "true")
-        let navigationProps =
-            entityType.GetProperties() 
-            |> List.ofArray 
-            |> List.filter (fun p -> p.CanRead && p.CanWrite && p.PropertyType.IsGenericType && types.ContainsKey(p.PropertyType.GetGenericArguments().[0].Name))
-            |> List.map (fun p -> newNavProp p)
-        newElem "EntityType" (content @ simpleProps)// @ navigationProps)
+            getSimpleProperties entityType 
+                |> List.map (fun p -> newProp (p.Name) (getName p.PropertyType) (if p.Name = "Id" then "false" else "true"))
+        let simpleProps =
+            if getSimpleProperties entityType |> List.exists (fun p -> p.Name = "Id") then simpleProps
+            else newProp "Id" "Int32" "false" :: simpleProps
+        let navigationProperties = getNavigationProperties entityType |> List.map (fun p -> newNavProp p)
+        newElem "EntityType" (content @ simpleProps @ navigationProperties)
 
-    let docModel = targetModelPath |> XDocument.Load
-    let schema = docModel.Root |> getDescendant "ConceptualModels" |> getDescendant "http://schemas.microsoft.com/ado/2009/11/edm:Schema"
-    let ns = schema |> getAttr "Namespace"
-    let container =  schema |> getDescendant "http://schemas.microsoft.com/ado/2009/11/edm:EntityContainer"
+    let newAssociationSet (r1, r2) = 
+        let name = getAssociationName r1 r2
+        newElem "AssociationSet"
+            [ newAttr "Name" name
+              newAttr "Association" (ns + "." + name)
+              newElem "End"
+                [ newAttr "Role" r1.roleFrom
+                  newAttr "EntitySet" (r1.relType + "s") ]
+              newElem "End"
+                [ newAttr "Role" r2.roleFrom
+                  newAttr "EntitySet" (r2.relType + "s") ]]
 
+    let newAssociation (r1, r2) = 
+        let name = getAssociationName r1 r2
+        newElem "Association"
+            [ newAttr "Name" name
+              newElem "End"
+                [ newAttr "Type" (ns + "." + r1.relType)
+                  newAttr "Role" r1.roleFrom
+                  newAttr "Multiplicity" r1.multiplicity ]
+              newElem "End"
+                [ newAttr "Type" (ns + "." + r2.relType)
+                  newAttr "Role" r2.roleFrom
+                  newAttr "Multiplicity" r2.multiplicity ]]
+
+    let newAssociationConnector (r1, r2) = 
+        let name = getAssociationName r1 r2
+        newElem "AssociationConnector" [ newAttr "Association" (ns + "." + name) ]
+                  
     schema.RemoveNodes()
     container.RemoveNodes()
     
     schema.Add(container)
     container.Add(types |> Map.toSeq |> Seq.map snd |> Seq.map (fun t -> newEntSet (t.Name) (ns + "." + t.Name)))
+    container.Add(associations.Value |> Seq.map newAssociationSet)
     schema.Add(types |> Map.toSeq |> Seq.map (snd >> newEntType))
+    schema.Add(associations.Value |> Seq.map newAssociation)
 
     docModel.Save(targetModelPath)
 
@@ -101,5 +120,6 @@ let importDomainModel (sourceAssemblyPath: string) (targetModelPath: string) sta
     let diagram = docDiagram.Root |> getDescendant "Diagram"
     diagram.RemoveNodes()
     diagram.Add(types |> Map.toSeq |> Seq.mapi (fun i (n, t) -> newEntShape (t.Name) ns (getNextShapePos i)))
+    diagram.Add(associations.Value |> Seq.map newAssociationConnector)
     docDiagram.Save(diagramPath)
     ()

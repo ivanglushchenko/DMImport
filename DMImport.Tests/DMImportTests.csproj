@@ -59,9 +59,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Customer.cs">
-      <DependentUpon>ImportedModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="ImportedModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,21 +73,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ImportedModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="ObjectState.cs">
-      <DependentUpon>ImportedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Order.cs">
-      <DependentUpon>ImportedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Product.cs">
-      <DependentUpon>ImportedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductGroup.cs">
-      <DependentUpon>ImportedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductType.cs">
-      <DependentUpon>ImportedModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

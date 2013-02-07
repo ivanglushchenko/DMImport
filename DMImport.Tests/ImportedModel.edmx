@@ -12,55 +12,1150 @@
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DomainModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="DomainModelContainer" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Customer" EntityType="DomainModel.Customer" />
-          <EntitySet Name="ObjectState" EntityType="DomainModel.ObjectState" />
-          <EntitySet Name="Order" EntityType="DomainModel.Order" />
-          <EntitySet Name="Product" EntityType="DomainModel.Product" />
-          <EntitySet Name="ProductGroup" EntityType="DomainModel.ProductGroup" />
-          <EntitySet Name="ProductType" EntityType="DomainModel.ProductType" />
+          <EntitySet Name="ActionEntitlements" EntityType="DomainModel.ActionEntitlement" />
+          <EntitySet Name="ActionRegionEntitlements" EntityType="DomainModel.ActionRegionEntitlement" />
+          <EntitySet Name="AggregatorConfigurations" EntityType="DomainModel.AggregatorConfiguration" />
+          <EntitySet Name="AlertPopupTriggers" EntityType="DomainModel.AlertPopupTrigger" />
+          <EntitySet Name="AlertPopupTriggerActions" EntityType="DomainModel.AlertPopupTriggerAction" />
+          <EntitySet Name="AlertPopupTriggerConditions" EntityType="DomainModel.AlertPopupTriggerCondition" />
+          <EntitySet Name="AlertSettingsConfigurations" EntityType="DomainModel.AlertSettingsConfiguration" />
+          <EntitySet Name="AppFunctionEntitlements" EntityType="DomainModel.AppFunctionEntitlement" />
+          <EntitySet Name="AppSettingsConfigurations" EntityType="DomainModel.AppSettingsConfiguration" />
+          <EntitySet Name="BaseConfigurations" EntityType="DomainModel.BaseConfiguration" />
+          <EntitySet Name="BaseConfigurationItems" EntityType="DomainModel.BaseConfigurationItem" />
+          <EntitySet Name="ColumnReferences" EntityType="DomainModel.ColumnReference" />
+          <EntitySet Name="Components" EntityType="DomainModel.Component" />
+          <EntitySet Name="ComponentsConfigurations" EntityType="DomainModel.ComponentsConfiguration" />
+          <EntitySet Name="ConditionalThresholds" EntityType="DomainModel.ConditionalThreshold" />
+          <EntitySet Name="ConfigurationContainers" EntityType="DomainModel.ConfigurationContainer" />
+          <EntitySet Name="ConnectionRegionEntitlements" EntityType="DomainModel.ConnectionRegionEntitlement" />
+          <EntitySet Name="ConnectionsGroupsConfigurations" EntityType="DomainModel.ConnectionsGroupsConfiguration" />
+          <EntitySet Name="ConnectionsGroupsConfigurationExtensionss" EntityType="DomainModel.ConnectionsGroupsConfigurationExtensions" />
+          <EntitySet Name="CurrenciesConfigurations" EntityType="DomainModel.CurrenciesConfiguration" />
+          <EntitySet Name="CustomerSlangsGroupsConfigurations" EntityType="DomainModel.CustomerSlangsGroupsConfiguration" />
+          <EntitySet Name="CustomersGroupsConfigurations" EntityType="DomainModel.CustomersGroupsConfiguration" />
+          <EntitySet Name="DALSettingsConfigurations" EntityType="DomainModel.DALSettingsConfiguration" />
+          <EntitySet Name="DataEntitlements" EntityType="DomainModel.DataEntitlement" />
+          <EntitySet Name="DataViews" EntityType="DomainModel.DataView" />
+          <EntitySet Name="DataViewColumns" EntityType="DomainModel.DataViewColumn" />
+          <EntitySet Name="DataViewColumnPreferencess" EntityType="DomainModel.DataViewColumnPreferences" />
+          <EntitySet Name="DataViewPreferencess" EntityType="DomainModel.DataViewPreferences" />
+          <EntitySet Name="DataViewsConfigurations" EntityType="DomainModel.DataViewsConfiguration" />
+          <EntitySet Name="Destinations" EntityType="DomainModel.Destination" />
+          <EntitySet Name="DestinationRoutes" EntityType="DomainModel.DestinationRoute" />
+          <EntitySet Name="DictionariesConfigurations" EntityType="DomainModel.DictionariesConfiguration" />
+          <EntitySet Name="Dictionarys" EntityType="DomainModel.Dictionary" />
+          <EntitySet Name="DictionaryItems" EntityType="DomainModel.DictionaryItem" />
+          <EntitySet Name="DnaInstances" EntityType="DomainModel.DnaInstance" />
+          <EntitySet Name="EmailSettingsConfigurations" EntityType="DomainModel.EmailSettingsConfiguration" />
+          <EntitySet Name="EmsConfigurations" EntityType="DomainModel.EmsConfiguration" />
+          <EntitySet Name="Entitlements" EntityType="DomainModel.Entitlement" />
+          <EntitySet Name="EntitlementsConfigurations" EntityType="DomainModel.EntitlementsConfiguration" />
+          <EntitySet Name="EsatConfigurations" EntityType="DomainModel.EsatConfiguration" />
+          <EntitySet Name="Filters" EntityType="DomainModel.Filter" />
+          <EntitySet Name="FilterConfigurations" EntityType="DomainModel.FilterConfiguration" />
+          <EntitySet Name="FilteringPanes" EntityType="DomainModel.FilteringPane" />
+          <EntitySet Name="FilteringPaneColumns" EntityType="DomainModel.FilteringPaneColumn" />
+          <EntitySet Name="FilteringPanesConfigurations" EntityType="DomainModel.FilteringPanesConfiguration" />
+          <EntitySet Name="FiltersConfigurations" EntityType="DomainModel.FiltersConfiguration" />
+          <EntitySet Name="Groups" EntityType="DomainModel.Group" />
+          <EntitySet Name="IOIReceiverConfigurations" EntityType="DomainModel.IOIReceiverConfiguration" />
+          <EntitySet Name="LocalStringExtensionss" EntityType="DomainModel.LocalStringExtensions" />
+          <EntitySet Name="MessageCollectorConfigurations" EntityType="DomainModel.MessageCollectorConfiguration" />
+          <EntitySet Name="MessageTemplates" EntityType="DomainModel.MessageTemplate" />
+          <EntitySet Name="ModuleEntitlements" EntityType="DomainModel.ModuleEntitlement" />
+          <EntitySet Name="OrderTreeSettingss" EntityType="DomainModel.OrderTreeSettings" />
+          <EntitySet Name="PersistorConfigurations" EntityType="DomainModel.PersistorConfiguration" />
+          <EntitySet Name="Queues" EntityType="DomainModel.Queue" />
+          <EntitySet Name="Receivers" EntityType="DomainModel.Receiver" />
+          <EntitySet Name="ReferenceDataConfigurations" EntityType="DomainModel.ReferenceDataConfiguration" />
+          <EntitySet Name="ReferenceDataConnectionStrings" EntityType="DomainModel.ReferenceDataConnectionString" />
+          <EntitySet Name="RegionEntitlements" EntityType="DomainModel.RegionEntitlement" />
+          <EntitySet Name="ReportConfigurations" EntityType="DomainModel.ReportConfiguration" />
+          <EntitySet Name="ReportDefinitions" EntityType="DomainModel.ReportDefinition" />
+          <EntitySet Name="RequestHandlerConfigurations" EntityType="DomainModel.RequestHandlerConfiguration" />
+          <EntitySet Name="Roles" EntityType="DomainModel.Role" />
+          <EntitySet Name="RoutingConfigurations" EntityType="DomainModel.RoutingConfiguration" />
+          <EntitySet Name="RulesEngineSettingsConfigurations" EntityType="DomainModel.RulesEngineSettingsConfiguration" />
+          <EntitySet Name="Schedules" EntityType="DomainModel.Schedule" />
+          <EntitySet Name="ScheduleItems" EntityType="DomainModel.ScheduleItem" />
+          <EntitySet Name="Servers" EntityType="DomainModel.Server" />
+          <EntitySet Name="ServerRoutes" EntityType="DomainModel.ServerRoute" />
+          <EntitySet Name="StatusColorMappings" EntityType="DomainModel.StatusColorMapping" />
+          <EntitySet Name="StrategiesConfigurations" EntityType="DomainModel.StrategiesConfiguration" />
+          <EntitySet Name="SupervisorConfigurations" EntityType="DomainModel.SupervisorConfiguration" />
+          <EntitySet Name="SystemEntitlements" EntityType="DomainModel.SystemEntitlement" />
+          <EntitySet Name="TfsConfigurations" EntityType="DomainModel.TfsConfiguration" />
+          <EntitySet Name="Topics" EntityType="DomainModel.Topic" />
+          <EntitySet Name="UIConfigurations" EntityType="DomainModel.UIConfiguration" />
+          <EntitySet Name="Users" EntityType="DomainModel.User" />
+          <EntitySet Name="UserPreferencesConfigurations" EntityType="DomainModel.UserPreferencesConfiguration" />
+          <EntitySet Name="VersionConfigurations" EntityType="DomainModel.VersionConfiguration" />
+          <EntitySet Name="ViewEntitlements" EntityType="DomainModel.ViewEntitlement" />
+          <EntitySet Name="WatchListConditions" EntityType="DomainModel.WatchListCondition" />
+          <EntitySet Name="WatchListConfigurations" EntityType="DomainModel.WatchListConfiguration" />
+          <EntitySet Name="WatchListMarkers" EntityType="DomainModel.WatchListMarker" />
+          <EntitySet Name="WatchListTriggers" EntityType="DomainModel.WatchListTrigger" />
+          <EntitySet Name="WindowSettingss" EntityType="DomainModel.WindowSettings" />
         </EntityContainer>
-        <EntityType Name="Customer">
+        <EntityType Name="ActionEntitlement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="System" Nullable="true" />
+          <Property Type="String" Name="DataRestrictionName" Nullable="true" />
+          <Property Type="String" Name="DataRestrictionExpression" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ActionRegionEntitlement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Region" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="AggregatorConfiguration">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="FirstName" Nullable="true" />
-          <Property Type="String" Name="LastName" Nullable="true" />
+          <Property Type="Boolean" Name="DumpAllIncomingMessages" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
         </EntityType>
-        <EntityType Name="ObjectState">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Order">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="Int32" Name="Quantity" Nullable="true" />
-        </EntityType>
-        <EntityType Name="Product">
+        <EntityType Name="AlertPopupTrigger">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" />
           <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="AlertPopupTriggerAction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="ShowPopup" Nullable="true" />
+          <Property Type="Boolean" Name="PlaySound" Nullable="true" />
+          <Property Type="Boolean" Name="PlaySevere" Nullable="true" />
+          <Property Type="Boolean" Name="PlayHigh" Nullable="true" />
+          <Property Type="Boolean" Name="PlayWarning" Nullable="true" />
+          <Property Type="Boolean" Name="PlayInfo" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="AlertPopupTriggerCondition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
           <Property Type="String" Name="Description" Nullable="true" />
-          <Property Type="Int32" Name="ProductGroupId" Nullable="true" />
+          <Property Type="String" Name="QueryText" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
         </EntityType>
-        <EntityType Name="ProductGroup">
+        <EntityType Name="AlertSettingsConfiguration">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="Int32" Name="ProductGroupId" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
         </EntityType>
-        <EntityType Name="ProductType">
+        <EntityType Name="AppFunctionEntitlement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="AppSettingsConfiguration">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="UpdatesNotificationDelay" Nullable="true" />
+          <Property Type="Boolean" Name="InstantAlertNotifications" Nullable="true" />
+          <Property Type="Int32" Name="MaxItemsToLoad" Nullable="true" />
+          <Property Type="Boolean" Name="DumpAllIncomingMessages" Nullable="true" />
+          <Property Type="Int32" Name="MarkAlertAsReadDelay" Nullable="true" />
+          <Property Type="Int32" Name="LastQueriesCount" Nullable="true" />
+          <Property Type="String" Name="SymbolDetailsUrlTemplate" Nullable="true" />
+          <Property Type="Boolean" Name="SaveUserPreferencesOnExit" Nullable="true" />
+          <Property Type="Boolean" Name="ShowGeneralUpdatesIndicator" Nullable="true" />
+          <Property Type="Boolean" Name="ShowWatchListUpdatesIndicator" Nullable="true" />
+          <Property Type="DateTime" Name="StartTime" Nullable="true" />
+          <Property Type="DateTime" Name="StopTime" Nullable="true" />
+          <Property Type="Int32" Name="AvailableDaysOfHistoricalData" Nullable="true" />
+          <Property Type="String" Name="AlertGlobalFilter" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="BaseConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="BaseConfigurationItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ColumnReference">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="Value" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Component">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="Type" Nullable="true" />
+          <Property Type="String" Name="MachineName" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ComponentsConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ConditionalThreshold">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Expression" Nullable="true" />
+          <Property Type="Double" Name="Threshold" Nullable="true" />
+          <Property Type="Double" Name="Threshold2" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ConfigurationContainer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ConnectionRegionEntitlement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Region" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ConnectionsGroupsConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ConnectionsGroupsConfigurationExtensions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurrenciesConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="DefaultCurrency" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="CustomerSlangsGroupsConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="CustomersGroupsConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="DALSettingsConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="DNAServiceName" Nullable="true" />
+          <Property Type="String" Name="DNATransportId" Nullable="true" />
+          <Property Type="String" Name="DNATransportClassName" Nullable="true" />
+          <Property Type="String" Name="DNATransportProvider" Nullable="true" />
+          <Property Type="String" Name="DNATransportConnectionFactory" Nullable="true" />
+          <Property Type="String" Name="DNATransportUserName" Nullable="true" />
+          <Property Type="String" Name="DNATransportPassword" Nullable="true" />
+          <Property Type="String" Name="DNAEnv" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="DataEntitlement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="Expression" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="DataView">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="Boolean" Name="IsCritical" Nullable="true" />
+          <Property Type="String" Name="IsCriticalExplanation" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="DataViewColumn">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="Caption" Nullable="true" />
+          <Property Type="String" Name="CellTemplateName" Nullable="true" />
+          <Property Type="String" Name="HeaderTemplateName" Nullable="true" />
+          <Property Type="Boolean" Name="IsExportable" Nullable="true" />
+          <Property Type="String" Name="StringFormat" Nullable="true" />
+          <Property Type="Boolean" Name="IsBold" Nullable="true" />
+          <Property Type="String" Name="GroupName" Nullable="true" />
+          <Property Type="String" Name="MapperName" Nullable="true" />
+          <Property Type="Type" Name="ColumnType" Nullable="true" />
+          <Property Type="IValueConverter" Name="Converter" Nullable="true" />
+          <Property Type="DataTemplate" Name="CellTemplate" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="DataViewColumnPreferences">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="ColumnName" Nullable="true" />
+          <Property Type="Double" Name="Width" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="DataViewPreferences">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="DataViewName" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="DataViewsConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Destination">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="SubscriptionId" Nullable="true" />
+          <Property Type="Boolean" Name="IsTemporary" Nullable="true" />
+          <Property Type="Boolean" Name="IsTransient" Nullable="true" />
+          <Property Type="Boolean" Name="IsDurable" Nullable="true" />
+          <Property Type="Boolean" Name="IsExplicitAcknowledge" Nullable="true" />
+          <Property Type="Int32" Name="AcknowledgeMode" Nullable="true" />
+          <Property Type="Boolean" Name="UseSharedServerConnection" Nullable="true" />
+          <Property Type="Boolean" Name="IsRetraslatable" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="DestinationRoute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="From" Nullable="true" />
+          <Property Type="String" Name="To" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="DictionariesConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Dictionary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="Boolean" Name="IsFreeText" Nullable="true" />
+          <Property Type="Boolean" Name="ShowAlerts" Nullable="true" />
+          <Property Type="Boolean" Name="CheckAtStartup" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="DictionaryItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Caption" Nullable="true" />
+          <Property Type="String" Name="Value" Nullable="true" />
+          <Property Type="String" Name="FixValuesSource" Nullable="true" />
+          <Property Type="String" Name="RequiredColumns" Nullable="true" />
+          <Property Type="Boolean" Name="IsEnabled" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="DnaInstance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="SupportedRequestTypes" Nullable="true" />
+          <Property Type="String" Name="SuportedDataFlows" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfInstances" Nullable="true" />
+          <Property Type="String" Name="GroupName" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="EmailSettingsConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="SmtpServer" Nullable="true" />
+          <Property Type="Boolean" Name="UseDefaultCredentials" Nullable="true" />
+          <Property Type="String" Name="UserName" Nullable="true" />
+          <Property Type="String" Name="UserPassword" Nullable="true" />
+          <Property Type="String" Name="DefaultFromAddress" Nullable="true" />
+          <Property Type="String" Name="DefaultToAddress" Nullable="true" />
+          <Property Type="String" Name="SubjectTemplate" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="EmsConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Entitlement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="EntitlementsConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="EsatConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="ESEnv" Nullable="true" />
+          <Property Type="Int32" Name="ESAppID" Nullable="true" />
+          <Property Type="String" Name="ESContextPath" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Filter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="FilteringPaneName" Nullable="true" />
+          <Property Type="String" Name="DataViewName" Nullable="true" />
+          <Property Type="String" Name="Caption" Nullable="true" />
+          <Property Type="String" Name="BaseQueryName" Nullable="true" />
+          <Property Type="String" Name="BaseQueryText" Nullable="true" />
+          <Property Type="String" Name="GroupName" Nullable="true" />
+          <Property Type="Int32" Name="MaxItemsToLoad" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="FilterConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Caption" Nullable="true" />
+          <Property Type="String" Name="BaseQueryName" Nullable="true" />
+          <Property Type="String" Name="BaseQueryText" Nullable="true" />
+          <Property Type="String" Name="GroupName" Nullable="true" />
+          <Property Type="Int32" Name="MaxItemsToLoad" Nullable="true" />
+          <Property Type="Boolean" Name="IsEditable" Nullable="true" />
+          <Property Type="String" Name="SplitCriterion" Nullable="true" />
+          <Property Type="Boolean" Name="OverrideOpenInWindowFlag" Nullable="true" />
+          <Property Type="Boolean" Name="ActivateOnUpdate" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="FilteringPane">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="Boolean" Name="IsCritical" Nullable="true" />
+          <Property Type="String" Name="IsCriticalExplanation" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="FilteringPaneColumn">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="Caption" Nullable="true" />
+          <Property Type="Type" Name="ColumnType" Nullable="true" />
+          <Property Type="Boolean" Name="IsNullable" Nullable="true" />
+          <Property Type="String" Name="DictionaryName" Nullable="true" />
+          <Property Type="String" Name="DefaultValue" Nullable="true" />
+          <Property Type="Boolean" Name="IsHidden" Nullable="true" />
+          <Property Type="String" Name="GroupName" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="FilteringPanesConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="FiltersConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="AllowedConnections" Nullable="true" />
+          <Property Type="String" Name="ProhibitedConnections" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="IOIReceiverConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="LocalStringExtensions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MessageCollectorConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="ServerName" Nullable="true" />
+          <Property Type="String" Name="GroupName" Nullable="true" />
+          <Property Type="String" Name="DestinationName" Nullable="true" />
+          <Property Type="String" Name="PersistingDestinationName" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="MessageTemplate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="Body" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ModuleEntitlement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="ModuleName" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="OrderTreeSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="ShowTopLevelOnly" Nullable="true" />
+          <Property Type="Boolean" Name="ShowFixMessagesInTree" Nullable="true" />
+          <Property Type="Boolean" Name="ShowIncomingMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowOutgoingMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowClientMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowOESMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowExchangeMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowC4XMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowBookMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowExecutionsInTree" Nullable="true" />
+          <Property Type="Boolean" Name="ShowNettedExecutionsInTree" Nullable="true" />
+          <Property Type="Boolean" Name="ShowAlertsInTree" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="PersistorConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="WorkingDirectory" Nullable="true" />
+          <Property Type="Boolean" Name="DumpAllIncomingMessages" Nullable="true" />
+          <Property Type="Boolean" Name="UseBackup" Nullable="true" />
+          <Property Type="Boolean" Name="ReadBackupAtStartup" Nullable="true" />
+          <Property Type="String" Name="PersistorType" Nullable="true" />
+          <Property Type="Int32" Name="BatchSize" Nullable="true" />
+          <Property Type="Int32" Name="BatchDelay" Nullable="true" />
+          <Property Type="Boolean" Name="UseAsyncCalls" Nullable="true" />
+          <Property Type="Boolean" Name="AllowParallelBatches" Nullable="true" />
+          <Property Type="Boolean" Name="ResetDnaTransportOnAbort" Nullable="true" />
+          <Property Type="Boolean" Name="UseDnaConnectionTimeouts" Nullable="true" />
+          <Property Type="Boolean" Name="ForceMultipleIncomingSubscruptions" Nullable="true" />
+          <Property Type="Boolean" Name="VerboseLogging" Nullable="true" />
+          <Property Type="Boolean" Name="TrackCpuUsage" Nullable="true" />
+          <Property Type="Int32" Name="CpuWarningThreshold" Nullable="true" />
+          <Property Type="Boolean" Name="WarnCpuUsageOnce" Nullable="true" />
+          <Property Type="Boolean" Name="TrackUniqueItems" Nullable="true" />
+          <Property Type="Boolean" Name="ExplicitGC" Nullable="true" />
+          <Property Type="Boolean" Name="TrackThreads" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Queue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="SubscriptionId" Nullable="true" />
+          <Property Type="Boolean" Name="IsTemporary" Nullable="true" />
+          <Property Type="Boolean" Name="IsTransient" Nullable="true" />
+          <Property Type="Boolean" Name="IsDurable" Nullable="true" />
+          <Property Type="Boolean" Name="IsExplicitAcknowledge" Nullable="true" />
+          <Property Type="Int32" Name="AcknowledgeMode" Nullable="true" />
+          <Property Type="Boolean" Name="UseSharedServerConnection" Nullable="true" />
+          <Property Type="Boolean" Name="IsRetraslatable" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Receiver">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Recipient" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ReferenceDataConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ReferenceDataConnectionString">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="ConnectionString" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="RegionEntitlement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Region" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ReportConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ReportDefinition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="HostForSMTPTransaction" Nullable="true" />
+          <Property Type="String" Name="PortForSMTPTransaction" Nullable="true" />
+          <Property Type="String" Name="Subject" Nullable="true" />
+          <Property Type="String" Name="Days" Nullable="true" />
+          <Property Type="String" Name="Sender" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="RequestHandlerConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="MaxItemsPerResponse" Nullable="true" />
+          <Property Type="String" Name="IndexedColumns" Nullable="true" />
+          <Property Type="String" Name="LogStorage" Nullable="true" />
+          <Property Type="Boolean" Name="UseCache" Nullable="true" />
+          <Property Type="Boolean" Name="UseDirectConnectionsAcrossRegions" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" />
+          <Property Type="String" Name="AllowedConnections" Nullable="true" />
+          <Property Type="String" Name="ProhibitedConnections" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="RoutingConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="RulesEngineSettingsConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="RulesMask" Nullable="true" />
+          <Property Type="String" Name="CustomTagsMask" Nullable="true" />
+          <Property Type="String" Name="SchemaPath" Nullable="true" />
+          <Property Type="String" Name="CustomTagsPath" Nullable="true" />
+          <Property Type="String" Name="RulesPath" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ScheduleItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="DayOfWeek" Name="DayOfWeek" Nullable="true" />
+          <Property Type="DateTime" Name="StartAt" Nullable="true" />
+          <Property Type="Int32" Name="RunTime" Nullable="true" />
+          <Property Type="DateTime" Name="StopAt" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Server">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="ServerUrl" Nullable="true" />
+          <Property Type="String" Name="UserName" Nullable="true" />
+          <Property Type="String" Name="Password" Nullable="true" />
+          <Property Type="String" Name="GroupName" Nullable="true" />
+          <Property Type="String" Name="System" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ServerRoute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="From" Nullable="true" />
+          <Property Type="String" Name="To" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="StatusColorMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Status" Nullable="true" />
+          <Property Type="String" Name="Color" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="StrategiesConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="SupervisorConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="MonitorOnly" Nullable="true" />
+          <Property Type="Int32" Name="UpdatesNotificationDelay" Nullable="true" />
+          <Property Type="Boolean" Name="InstantAlertNotifications" Nullable="true" />
+          <Property Type="Int32" Name="MaxItemsToLoad" Nullable="true" />
+          <Property Type="Boolean" Name="DumpAllIncomingMessages" Nullable="true" />
+          <Property Type="Int32" Name="MarkAlertAsReadDelay" Nullable="true" />
+          <Property Type="Int32" Name="LastQueriesCount" Nullable="true" />
+          <Property Type="String" Name="SymbolDetailsUrlTemplate" Nullable="true" />
+          <Property Type="Boolean" Name="SaveUserPreferencesOnExit" Nullable="true" />
+          <Property Type="Boolean" Name="ShowGeneralUpdatesIndicator" Nullable="true" />
+          <Property Type="Boolean" Name="ShowWatchListUpdatesIndicator" Nullable="true" />
+          <Property Type="DateTime" Name="StartTime" Nullable="true" />
+          <Property Type="DateTime" Name="StopTime" Nullable="true" />
+          <Property Type="Int32" Name="AvailableDaysOfHistoricalData" Nullable="true" />
+          <Property Type="String" Name="AlertGlobalFilter" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="SystemEntitlement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="System" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="TfsConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="true" />
+          <Property Type="String" Name="Password" Nullable="true" />
+          <Property Type="String" Name="Domain" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Topic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="SubscriptionId" Nullable="true" />
+          <Property Type="Boolean" Name="IsTemporary" Nullable="true" />
+          <Property Type="Boolean" Name="IsTransient" Nullable="true" />
+          <Property Type="Boolean" Name="IsDurable" Nullable="true" />
+          <Property Type="Boolean" Name="IsExplicitAcknowledge" Nullable="true" />
+          <Property Type="Int32" Name="AcknowledgeMode" Nullable="true" />
+          <Property Type="Boolean" Name="UseSharedServerConnection" Nullable="true" />
+          <Property Type="Boolean" Name="IsRetraslatable" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="UIConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="UpdatesNotificationDelay" Nullable="true" />
+          <Property Type="Boolean" Name="InstantAlertNotifications" Nullable="true" />
+          <Property Type="Int32" Name="MaxItemsToLoad" Nullable="true" />
+          <Property Type="Boolean" Name="DumpAllIncomingMessages" Nullable="true" />
+          <Property Type="Int32" Name="MarkAlertAsReadDelay" Nullable="true" />
+          <Property Type="Int32" Name="LastQueriesCount" Nullable="true" />
+          <Property Type="String" Name="SymbolDetailsUrlTemplate" Nullable="true" />
+          <Property Type="Boolean" Name="SaveUserPreferencesOnExit" Nullable="true" />
+          <Property Type="Boolean" Name="ShowGeneralUpdatesIndicator" Nullable="true" />
+          <Property Type="Boolean" Name="ShowWatchListUpdatesIndicator" Nullable="true" />
+          <Property Type="DateTime" Name="StartTime" Nullable="true" />
+          <Property Type="DateTime" Name="StopTime" Nullable="true" />
+          <Property Type="Int32" Name="AvailableDaysOfHistoricalData" Nullable="true" />
+          <Property Type="String" Name="AlertGlobalFilter" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="SOEId" Nullable="true" />
+          <Property Type="String" Name="FullName" Nullable="true" />
+          <Property Type="String" Name="LastName" Nullable="true" />
+          <Property Type="String" Name="FirstName" Nullable="true" />
+          <Property Type="String" Name="Email" Nullable="true" />
+          <Property Type="String" Name="Status" Nullable="true" />
+          <Property Type="String" Name="AllowedConnections" Nullable="true" />
+          <Property Type="String" Name="ProhibitedConnections" Nullable="true" />
+          <Property Type="String" Name="PermittedActions" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="UserPreferencesConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Orientation" Name="MainLayoutOrientation" Nullable="true" />
+          <Property Type="Boolean" Name="IsGlobalStatAndAlertsVisible" Nullable="true" />
+          <Property Type="Boolean" Name="IsExceptionsVisible" Nullable="true" />
+          <Property Type="Boolean" Name="IsOrderFiltersExpanded" Nullable="true" />
+          <Property Type="Boolean" Name="IsExecutionFiltersExpanded" Nullable="true" />
+          <Property Type="Boolean" Name="IsAlertFiltersExpanded" Nullable="true" />
+          <Property Type="Boolean" Name="IsIOIMessageFiltersExpanded" Nullable="true" />
+          <Property Type="Boolean" Name="ShowFixMessagesInTree" Nullable="true" />
+          <Property Type="Boolean" Name="ShowExecutionsInTree" Nullable="true" />
+          <Property Type="Boolean" Name="ShowNettedExecutionsInTree" Nullable="true" />
+          <Property Type="Boolean" Name="ShowAlertsInTree" Nullable="true" />
+          <Property Type="Boolean" Name="ShowIncomingMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowOutgoingMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowClientMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowOESMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowExchangeMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowC4XMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowBookMessages" Nullable="true" />
+          <Property Type="Boolean" Name="ShowTopLevelOnly" Nullable="true" />
+          <Property Type="Boolean" Name="TreeView_ShowTree" Nullable="true" />
+          <Property Type="Boolean" Name="TreeView_ShowGrid" Nullable="true" />
+          <Property Type="Boolean" Name="TreeView_ShowFix" Nullable="true" />
+          <Property Type="String" Name="DefaultAggregatorGroupByColumn" Nullable="true" />
+          <Property Type="Boolean" Name="PutNewItemsAtTop" Nullable="true" />
+          <Property Type="Boolean" Name="PutUpdatedItemsAtTop" Nullable="true" />
+          <Property Type="Boolean" Name="ShowGroups" Nullable="true" />
+          <Property Type="String" Name="GroupProperty" Nullable="true" />
+          <Property Type="Boolean" Name="ShowAlertGroups" Nullable="true" />
+          <Property Type="String" Name="AlertGroupProperty" Nullable="true" />
+          <Property Type="Boolean" Name="ShowActiveConnectionsOnly" Nullable="true" />
+          <Property Type="Boolean" Name="ShowActiveCustomersOnly" Nullable="true" />
+          <Property Type="Boolean" Name="ShowActiveSlangsOnly" Nullable="true" />
+          <Property Type="Boolean" Name="ShowPMPopup" Nullable="true" />
+          <Property Type="Boolean" Name="ShowOrderTreeInWindowOnDblClick" Nullable="true" />
+          <Property Type="Boolean" Name="UseStaticGroupingByDefault" Nullable="true" />
+          <Property Type="Boolean" Name="UseRTAggByDefault" Nullable="true" />
+          <Property Type="Boolean" Name="GroupConnectionsByGateways" Nullable="true" />
+          <Property Type="Boolean" Name="GroupConnectionsByVendors" Nullable="true" />
+          <Property Type="String" Name="DefaultConvertToCurrenyForBlotters" Nullable="true" />
+          <Property Type="String" Name="DefaultConvertToCurrenyForSummary" Nullable="true" />
+          <Property Type="Boolean" Name="OpenHistoricalSearchesInSeparateWindows" Nullable="true" />
+          <Property Type="Boolean" Name="FP_ResetFilterAlwaysVisible" Nullable="true" />
+          <Property Type="Boolean" Name="FP_ClearListAlwaysVisible" Nullable="true" />
+          <Property Type="String" Name="AlertGlobalFilter" Nullable="true" />
+          <Property Type="Boolean" Name="UseSeparateSettingsForTreeViews" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="VersionConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="MinVersion" Nullable="true" />
+          <Property Type="String" Name="MinVersionMessageTemplate" Nullable="true" />
+          <Property Type="String" Name="NewerVersion" Nullable="true" />
+          <Property Type="String" Name="NewerVersionMessageTemplate" Nullable="true" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ViewEntitlement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="Expression" Nullable="true" />
+          <Property Type="String" Name="PropertyName" Nullable="true" />
+          <Property Type="String" Name="Mask" Nullable="true" />
+          <Property Type="Boolean" Name="Deny" Nullable="true" />
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="WatchListCondition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="QueryText" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="WatchListConfiguration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="SettingId" Nullable="true" />
+          <Property Type="String" Name="InheritedFrom" Nullable="true" />
+          <Property Type="String" Name="MergeId" Nullable="true" />
+          <Property Type="Guid" Name="ScopeId" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="WatchListMarker">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Color" Nullable="true" />
+          <Property Type="Int32" Name="VisualOrder" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="WatchListTrigger">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="Boolean" Name="PlaySound" Nullable="true" />
+          <Property Type="Boolean" Name="ListenToNewOrders" Nullable="true" />
+          <Property Type="Boolean" Name="ListenToUpdatedOrders" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
+        </EntityType>
+        <EntityType Name="WindowSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="Boolean" Name="IsReadOnly" Nullable="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

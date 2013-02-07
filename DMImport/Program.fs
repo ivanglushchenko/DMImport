@@ -1,13 +1,13 @@
 ﻿open DMImport
 
-let printUsage =
-    printf "Usage: DMImport.exe sourceAssemblyPath targetModelPath [startingNamespace]"
+let printUsage () =
+    printf "Usage: DMImport.exe sourceAssemblyPath targetModelPath [startingNamespace]\n"
 
 [<EntryPoint>]
 let main argv = 
     match argv |> List.ofArray with
     | hd1 :: hd2 :: hd3 :: tl -> importDomainModel hd1 hd2 hd3
     | hd1 :: hd2 :: tl        -> importDomainModel hd1 hd2 null
-    | _                       -> printUsage
+    | _                       -> printUsage ()
 
     0
