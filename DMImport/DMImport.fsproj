@@ -23,7 +23,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Debug\DMImport.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
-    <StartArguments>"c:\Temp\_007\test.dll" "c:\Source\DMImport\DMImport.Tests\ImportedModel.edmx" "Configuration"</StartArguments>
+    <StartArguments>"c:\Source\DMGen\bin\Debug\DMGen.exe" "c:\Source\DMImport\DMImport.Tests\ImportedModel.edmx"</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

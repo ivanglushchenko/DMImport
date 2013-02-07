@@ -6,7 +6,7 @@ open System.Reflection
 let mutable sourceAssembly = ""
 let mutable namespaceFilter = ""
 
-type Relation = { name: string; relType: string; roleFrom: string; roleTo: string; multiplicity: string }
+type Relation = { name: string; relType: string; roleFrom: string; roleTo: string; multiplicity: string; hasNavProp: bool }
 type Association = Relation * Relation
     
 let getName (t: Type) = 
@@ -67,29 +67,35 @@ let evalAssociations () =
         let parentChildPairs =
             match p with
             | NavigationChildren cType ->
-                getProperties cType 
-                    |> List.filter (fun t -> 
-                        match t with
-                        | NavigationParent pType -> pType = p.DeclaringType
-                        | _ -> false)
-                    |> List.map (fun parent -> (p, parent))
+                let matches = 
+                    getProperties cType 
+                        |> List.filter (fun t -> 
+                            match t with
+                            | NavigationParent pType -> pType = p.DeclaringType
+                            | _ -> false)
+                        |> List.map (fun parent -> (p, parent))
+                if matches.IsEmpty then [(p, null)]
+                else matches
             | _ -> []
         
+        let rec getAvailableRoleName (name: string) roles =
+            if roles |> Set.contains name then 
+                let nextName =
+                    let lastChar = name.[name.Length - 1]
+                    if Char.IsDigit lastChar then
+                        if lastChar = '9' then name.Substring(0, name.Length - 1) + "10"
+                        else name.Substring(0, name.Length - 1) + (System.Int32.Parse(lastChar.ToString()) + 1).ToString()
+                    else name + "1"
+                getAvailableRoleName nextName roles
+            else (name, roles.Add name)
+
         let foldPairs (associations, roles) (p: PropertyInfo, parent: PropertyInfo) =
-            let rec getAvailableRoleName (name: string) roles =
-                if roles |> Set.contains name then 
-                    let nextName =
-                        let lastChar = name.[name.Length - 1]
-                        if Char.IsDigit lastChar then
-                            if lastChar = '9' then name.Substring(0, name.Length - 1) + "10"
-                            else name.Substring(0, name.Length - 1) + (System.Int32.Parse(lastChar.ToString()) + 1).ToString()
-                        else name + "1"
-                    getAvailableRoleName nextName roles
-                else (name, roles.Add name)
-            let (rn1, roles) = getAvailableRoleName parent.DeclaringType.Name roles
+            let childClass = p.PropertyType.GetGenericArguments().[0]
+            let childClassName = p.PropertyType.GetGenericArguments().[0].Name
+            let (rn1, roles) = getAvailableRoleName childClassName roles
             let (rn2, roles) = getAvailableRoleName p.DeclaringType.Name roles
-            let r1 = { name = parent.Name; relType = parent.DeclaringType.Name; roleFrom = rn1; roleTo = rn2; multiplicity = "*" }
-            let r2 = { name = p.Name; relType = p.DeclaringType.Name; roleFrom = rn2; roleTo = rn1; multiplicity = "1" }
+            let r1 = { name = (if parent = null then childClassName else parent.Name); relType = childClassName; roleFrom = rn1; roleTo = rn2; multiplicity = "*"; hasNavProp = parent <> null }
+            let r2 = { name = p.Name; relType = p.DeclaringType.Name; roleFrom = rn2; roleTo = rn1; multiplicity = "1"; hasNavProp = true }
             ((r1, r2) :: associations, roles)
 
         parentChildPairs |> List.fold foldPairs (List.empty, roles)
@@ -109,8 +115,12 @@ let getAssociationName r1 r2 = if r1.multiplicity = "1" then r1.roleFrom + r2.ro
 
 let evalNavigationPropeties () = 
     associations.Value
-        |> List.map (fun (r1, r2) -> [(r1.relType, (getAssociationName r1 r2, r1)); (r2.relType, (getAssociationName r1 r2, r2)) ])
+        |> List.map (fun (r1, r2) -> 
+            let t1 = if r1.hasNavProp then [(r1.relType, (getAssociationName r1 r2, r1))] else []
+            let t2 = if r2.hasNavProp then [(r2.relType, (getAssociationName r1 r2, r2))] else []
+            t1 @ t2)
         |> List.collect (fun t -> t)
+        |> List.filter (fun t -> true)
         |> Seq.groupBy fst
         |> Seq.map (fun (k, v) -> (k, v |> Seq.map snd |> List.ofSeq))
         |> Map.ofSeq
